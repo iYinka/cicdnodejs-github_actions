@@ -1,5 +1,5 @@
 {
-    "name": "autodduct",
+    "name": "cicd",
     "private": true,
     "scripts": {
         "dev": "next -- -p 8000",
