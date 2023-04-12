@@ -30,7 +30,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - name: Build and Push Docker Image
-      uses: mr-smithers-excellent/docker-build-push@v4
+      # uses: mr-smithers-excellent/docker-build-push@v4
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} docker.io
       - run: docker push iyinka/cicd-demo-app:0.1
       # with:
