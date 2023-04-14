@@ -18,7 +18,7 @@ jobs:
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Login to DockerHub Registry
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-    - name: Build and Push Docker Image
+    - name: Build and Push a Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: iyinka/cicd-demo-app
