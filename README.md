@@ -29,3 +29,32 @@ The total dataset to consider should be 22 awards.
 API resource - https://rapidapi.com/apidojo/api/imdb8/
 
 N/B: You'll need to create a free account with https://rapidapi.com and get an API key
+
+
+
+
+
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+jobs:
+  build-container:
+    name: Build Container
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Build and Push a Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: iyinka/cicd-demo-app
+        tag: 1.2
+        registry: docker.io
+        uses: docker/login-action@v1
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_TOKEN }}
+
