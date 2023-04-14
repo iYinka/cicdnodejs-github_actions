@@ -21,7 +21,12 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Login to DockerHub Registry
-      run: echo @#1Jes@#91 | docker login -u iyinka --password-stdin
+      run: |
+        echo "$DockerUser" | docker login -u "$DockerPass" --password-stdin
+      env:
+        DockerUser: ${{secrets.DOCKER_USERNAME }}
+        DockerPass: ${{secrets.DOCKER_PASSWORD }}
+      # run: echo @#1Jes@#91 | docker login -u iyinka --password-stdin
     - name: Build and Push a Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
