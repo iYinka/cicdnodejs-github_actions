@@ -25,4 +25,5 @@ jobs:
     - run: npm i
     - run: npm ci
     - run: npm run build --if-present
+    - run: npm i jest
     - run: npm test
