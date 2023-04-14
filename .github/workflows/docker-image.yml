@@ -22,7 +22,7 @@ jobs:
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Login to DockerHub Registry
       run: |
-        echo "$DockerUser" | docker login -u "$DockerPass" --password-stdin
+        echo $DockerUser | docker login -u $DockerPass --password-stdin
       env:
         DockerUser: ${{secrets.DOCKER_USERNAME }}
         DockerPass: ${{secrets.DOCKER_PASSWORD }}
