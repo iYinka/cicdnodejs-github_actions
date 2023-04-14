@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
     - name: Build and Push a Docker Image
-      uses: mr-smithers-excellent/docker-build-push@v4
+      # uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: iyinka/cicd-demo-app
         registry: docker.io
