@@ -18,8 +18,8 @@ jobs:
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Audit fixes
       run: npm audit fix --force
-    # - name: Build the Docker image
-    #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     # - name: Login to DockerHub Registry
     #   run: |
     #     echo $DockerUser | docker login -u $DockerPass --password-stdin
