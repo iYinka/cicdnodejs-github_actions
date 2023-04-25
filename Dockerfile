@@ -1,8 +1,9 @@
-# FROM node:13-alpine    this image is not available for windows/amd64
+FROM node:13-alpine
+# this image is not available for windows/amd64
 
 # FROM stefanscherer/node-windows:latest
 
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
+# FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 RUN mkdir -p /cicdnodejs
 
