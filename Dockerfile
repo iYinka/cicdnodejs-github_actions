@@ -1,4 +1,5 @@
-FROM node:13-alpine this image is not available for windows/amd64
+FROM node:13-alpine
+# this image is not available for windows/amd64
 
 # FROM stefanscherer/node-windows:latest
 
