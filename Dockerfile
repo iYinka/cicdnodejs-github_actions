@@ -17,4 +17,6 @@ WORKDIR /cicdnodejs
 # will execute npm install in /home/app because of WORKDIR
 RUN npm install
 
+EXPOSE 8000
+
 CMD ["npm", "run", "dev"]

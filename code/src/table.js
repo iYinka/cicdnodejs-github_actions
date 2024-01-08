@@ -258,7 +258,7 @@ function JsonTable() {
 
     const indexOfLastData = currentPage * pageSize;
     const indexOfFirstData = indexOfLastData - pageSize;
-    const TableData = users?.slice(indexOfFirstData, indexOfLastData);
+    const TableData = users.reverse()?.slice(indexOfFirstData, indexOfLastData);
 
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
